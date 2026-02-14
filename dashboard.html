@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Easy - Dashboard</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="scripts/dashboard.js"></script>
+  </head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Travel Easy</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="btn-auth">Sign In</button>
+  </header>
+
+  <!-- DASHBOARD HERO -->
+  <section class="hero-small">
+    <div class="explore-text">
+      <h1>Your Trip Dashboard</h1>
+      <p>All your travel details in one place</p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD GRID -->
+  <section id="dashboard">
+    <h2>Trip Overview</h2>
+    <div class="dashboard-grid">
+
+      <!-- Trip Summary -->
+      <section id="tripSummary" class="dashboard-card">
+        <h3>Trip Summary</h3>
+        <div id="tripSummaryContent">No trip created yet.</div>
+      </section>
+
+      <!-- Country Info -->
+      <section id="country" class="dashboard-card">
+        <h3>Country Information</h3>
+        <div id="countryInfo">Loading country details...</div>
+      </section>
+
+      <!-- Weather Forecast -->
+      <section id="weather" class="dashboard-card">
+        <h3>Weather Forecast</h3>
+        <div id="weatherInfo">Loading weather data...</div>
+      </section>
+
+      <!-- Budget Calculator -->
+      <section id="budget" class="dashboard-card">
+        <h3>Budget Calculator</h3>
+        <form id="budgetForm">
+          <input type="text" id="expenseName" placeholder="Expense name" required>
+          <input type="number" id="expenseAmount" placeholder="Amount" required>
+          <button type="submit">Add Expense</button>
+        </form>
+        <div id="budgetInfo">No expenses yet.</div>
+      </section>
+
+      <!-- Itinerary Builder -->
+      <section id="itinerary" class="dashboard-card">
+        <h3>Itinerary Builder</h3>
+        <form id="itineraryForm">
+          <input type="text" id="activityName" placeholder="Activity" required>
+          <input type="date" id="activityDate" required>
+          <button type="submit">Add Activity</button>
+        </form>
+        <div id="itineraryInfo">No activities yet.</div>
+      </section>
+
+      <!-- Notifications -->
+      <section id="notifications" class="dashboard-card">
+        <h3>Notifications</h3>
+        <div id="notificationsContent">No notifications yet.</div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Travel Easy. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

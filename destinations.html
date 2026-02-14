@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Easy - Destinations</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="scripts/destinations.js" defer></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Travel Easy</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="btn-auth">Sign In</button>
+    </header>
+
+  <!-- HERO (compact, no giant banner) -->
+    <section class="hero-small">
+        <div class="explore-text">
+            <h1>Explore Attractions</h1>
+            <p>Discover museums, parks, and historic sites</p>
+            <p>Type the name of a city to explore</p>
+        </div>
+        <form id="exploreForm" class="explore-form">
+            <input type="text" id="city" placeholder="Enter a city" required>
+            <button type="submit">Explore</button>
+        </form>
+    </section>
+
+  <!-- FEATURED DESTINATIONS -->
+    <section class="features">
+        <h2>Featured Destinations</h2>
+        <div class="spotlight-grid" id="featuredDestinations">
+        
+        </div>
+    </section>
+
+  <!-- SEARCH RESULTS -->
+    <section class="features">
+        <h2>Your Search</h2>
+        <div id="attractionsGrid">
+
+        </div>
+    </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Travel Easy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

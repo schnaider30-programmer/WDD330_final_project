@@ -1,0 +1,526 @@
+:root {
+    /* Colors */
+    --primary: #4A90E2;
+    /* sky blue */
+    --secondary: #f0a868;
+    /* sandy beige */
+    --tertiary: #0d1b2a;
+    /* deep navy */
+    --white: #f6f8fa; 
+    --text: #333;
+
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Merriweather', serif;
+    --font-numbers: 'Roboto Mono', monospace;
+
+    /* Spacing & Effects */
+    --padding: 1rem;
+    --radius: 8px;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* General reset */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--white);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding) calc(var(--padding) * 2);
+    background: var(--tertiary);
+    color: var(--white);
+    font-family: var(--font-heading);
+}
+
+.nav a {
+    margin: 0 var(--padding);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: var(--secondary);
+}
+
+.btn-auth {
+    color: var(--tertiary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: background 0.3s ease;
+    background: var(--secondary);
+
+
+}
+
+.btn-auth:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero img#hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-shadow: 2px 2px var(--tertiary);
+    color: var(--white);
+    animation: fadeIn 2s ease-in;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.hero-text p {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+}
+
+/* Hero animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+/* Trip form */
+.trip-form {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.trip-form input,
+.trip-form button {
+    padding: 0.7rem;
+    border-radius: var(--radius);
+    min-width: 180px;
+    border: none;
+}
+
+.trip-form button {
+    background: var(--secondary);
+    color: var(--tertiary);
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.trip-form button:hover {
+    transform: scale(1.05);
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Features grid */
+.features {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.features .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.features .card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: var(--font-body);
+    cursor: pointer;
+}
+
+.features .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard preview */
+
+#dashboard {
+    padding: 1.5rem;
+}
+
+.dashboard-preview {
+    background: var(--secondary);
+    color: var(--tertiary);
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-family: var(--font-numbers);
+    max-width: 800px;
+    /* keeps it centered and not too wide */
+}
+
+.dashboard-preview h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+}
+.dashboard-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--tertiary); /* use deep navy instead of always blue */
+}
+
+.dashboard-card:nth-child(odd) {
+  background: var(--secondary); /* beige background for variety */
+  color: var(--tertiary);
+}
+
+.dashboard-card:nth-child(even) {
+  background: var(--white);
+  color: var(--text);
+}
+
+.dashboard-preview #tripSummary {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.dashboard-preview .btn-auth {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background: var(--white);
+    color: var(--tertiary);
+}
+
+.dashboard-preview .btn-auth:hover {
+    background: var(--tertiary);
+    transform: scale(1.05);
+    color: var(--white)
+}
+
+/* ===========================
+   DESTINATIONS PAGE
+   =========================== */
+
+/* Compact hero section */
+.hero-small {
+  color: var(--tertiary);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.explore-text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.explore-text h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.explore-text p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Explore form */
+.explore-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.explore-form input,
+.explore-form button {
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  min-width: 160px;
+  border: none;
+}
+
+.explore-form button {
+  color: var(--tertiary);
+  background-color: var(--secondary);
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.explore-form button:hover {
+  transform: scale(1.05);
+  background: var(--primary);
+}
+/* ===========================
+   SPOTLIGHT CARDS (horizontal)
+   =========================== */
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* one card per row */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.spotlight-card {
+  display: flex;
+  flex-direction: row; /* horizontal layout */
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.spotlight-img {
+  width: 40%;          /* image takes 40% of card width */
+  height: auto;
+  object-fit: cover;
+}
+
+.spotlight-info {
+  flex: 1;             /* text takes remaining space */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spotlight-info h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-info p {
+  font-family: var(--font-body);
+  margin: 0.3rem 0;
+}
+
+/* ===========================
+   SEARCH RESULTS
+   =========================== */
+
+#attractionsGrid {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Info card for searched city */
+.info-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.info-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-family: var(--font-body);
+  margin: 0.5rem 0;
+}
+
+/* Gallery grid for searched city */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   DASHBOARD PAGE
+   =========================== */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--tertiary);
+}
+
+.dashboard-card p,
+.dashboard-card li {
+  font-family: var(--font-body);
+  line-height: 1.4;
+  margin: 0.3rem 0;
+}
+
+/* Forms inside dashboard cards */
+.dashboard-card form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-card input,
+.dashboard-card button {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  font-family: var(--font-body);
+}
+
+.dashboard-card button {
+  background: var(--tertiary);
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dashboard-card button:hover {
+  background: var(--primary);
+  color: var(--tertiary)
+}
+
+/* Lists inside cards */
+.dashboard-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.dashboard-card li {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.footer {
+    background: var(--tertiary);
+    color: var(--white);
+    text-align: center;
+    padding: var(--padding);
+    font-family: var(--font-body);
+}
+
+.socials a {
+    color: var(--white)
+}
+
+.socials a:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .spotlight-card {
+    flex-direction: column; /* stack image above text on small screens */
+  }
+
+  .spotlight-img {
+    width: 100%;
+    height: 200px;
+  }
+}

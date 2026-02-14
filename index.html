@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Easy - Home</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="scripts/home.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Travel Easy</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="btn-auth">Sign In</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="" alt="Travel Photography" id="hero-img">
+        <div class="hero-text">
+            <h1>Plan your trip with Travel Easy</h1>
+            <p>Create your trip and explore destinations, weather, and budgets.</p>
+        </div>
+        <form id="tripForm" class="trip-form">
+            <input type="text" id="dest" placeholder="Destination" required>
+            <input type="date" id="startDate" required>
+            <input type="date" id="endDate" required>
+            <input type="number" id="travelers" placeholder="Travelers" min="1" required>
+            <button type="submit">Create Trip</button>
+        </form>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <h2>Explore Travel Tools</h2>
+        <div class="grid">
+            <a href="destinations.html" class="card">Destination Explorer</a>
+            <a href="dashboard.html#country" class="card">Country Information</a>
+            <a href="dashboard.html#weather" class="card">Weather Forecast</a>
+            <a href="deals.html" class="card">Budget Calculator</a>
+            <a href="dashboard.html#itinerary" class="card">Itinerary Builder</a>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section class="dashboard-preview">
+        <h2>Your Current Trip</h2>
+        <div id="tripSummary">No trip created yet.</div>
+        <a href="dashboard.html" class="btn-auth">View Dashboard</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Travel Easy. All rights reserved.</p>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+
+</html>
