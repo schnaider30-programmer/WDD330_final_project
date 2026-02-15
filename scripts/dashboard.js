@@ -4,6 +4,9 @@ import { renderWeather } from "./weather.js";
 import { initBudget } from "./budget.js";
 import { initItinerary } from "./itinerary.js";
 import { renderNotifications } from "./notifications.js";
+import { loadHeaderFooter } from "./utilities.js";
+
+loadHeaderFooter()
 
 // Load trip from localStorage
 const tripData = Trip.load();

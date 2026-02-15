@@ -1,8 +1,11 @@
-import { fetchCountryInfo, fetchWikipediaSummary, fetchUnsplashGallery, getCountryFromCity } from './utilities.js';
-import { initHeroImages } from './heroImages.js';
+import { fetchWikipediaSummary, fetchUnsplashGallery, resolveCountry, loadHeaderFooter} from './utilities.js';
+
+loadHeaderFooter()
 
 // Default featured cities
-const defaultCities = ["Paris", "Tokyo", "New York", "London", "Rio de Janeiro"];
+const defaultCities = ["Paris", "Tokyo", "New York City", "London", "Rio de Janeiro"];
+
+// initHeroImages(defaultCities)
 
 async function renderSpotlight(city, containerId) {
   const container = document.getElementById(containerId);
@@ -15,15 +18,7 @@ async function renderSpotlight(city, containerId) {
     ]);
 
     // Resolve country name from city
-    const countryName = getCountryFromCity(city);
-    let countryInfo = null;
-    if (countryName) {
-      try {
-        countryInfo = await fetchCountryInfo(countryName);
-      } catch {
-        // ignore if not found
-      }
-    }
+    const countryInfo = await resolveCountry(city);
 
     // Build spotlight card (horizontal layout)
     const cardHTML = `
@@ -34,7 +29,7 @@ async function renderSpotlight(city, containerId) {
           <p>${wiki.extract}</p>
           ${
             countryInfo
-              ? `<p><strong>Country:</strong> ${countryInfo.name.common} | Capital: ${countryInfo.capital[0]} | Currency: ${Object.values(countryInfo.currencies)[0].name}</p>`
+              ? `<p class="capitalized"><strong>Country:</strong> ${countryInfo.name.common} | Capital: ${countryInfo.capital[0]} | Currency: ${Object.values(countryInfo.currencies)[0].name} ${Object.values(countryInfo.currencies)[0].symbol}</p>`
               : `<p><em>Country info not available for this city.</em></p>`
           }
         </div>
@@ -66,13 +61,7 @@ document.getElementById("exploreForm").addEventListener("submit", async e => {
     ]);
 
     // Resolve country name from city
-    const countryName = getCountryFromCity(city);
-    let countryInfo = null;
-    if (countryName) {
-      try {
-        countryInfo = await fetchCountryInfo(countryName);
-      } catch {}
-    }
+    const countryInfo = await resolveCountry(city)
 
     grid.innerHTML = `
       <div class="info-card">
@@ -95,4 +84,6 @@ document.getElementById("exploreForm").addEventListener("submit", async e => {
   } catch (err) {
     grid.innerHTML = `<p>Error: ${err.message}</p>`;
   }
+
+  city = ""
 });

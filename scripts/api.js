@@ -1,7 +1,18 @@
 import { fetchJSON } from './utilities.js';
 
 export async function getCountryInfo(destination) {
-  return fetchJSON(`https://restcountries.com/v3.1/name/${destination}`);
+  if (/^[A-Z]{2,3}$/i.test(destination)) {
+    return fetchJSON(`https://restcountries.com/v3.1/alpha/${destination}`)
+  } else {
+    return fetchJSON(`https://restcountries.com/v3.1/name/${destination}?fullText=true`);
+  }
+}
+
+export async function fetchCountryInfo(countryName) {
+  const data = await fetchJSON(
+    `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`
+  );
+  return data[0];
 }
 
 export async function getWeather(lat, lon) {
@@ -9,15 +20,14 @@ export async function getWeather(lat, lon) {
   const data = await fetchJSON(url);
   const imageSrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-  console.log(data)
-
   return {
     temperature: data.main.temp,
     windspeed: data.wind.speed,
     ISOCountry: data.sys.country,
     description: data.weather[0].description || "Unknown",
     imageSrc: imageSrc,
-    humidity:data.main.humidity,
+    humidity: data.main.humidity,
+    country: data.main
   };
 }
 

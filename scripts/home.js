@@ -1,6 +1,8 @@
 import { Trip } from "./Trip.js";
 import { initHeroImages } from "./heroImages.js";
+import { loadHeaderFooter } from "./utilities.js";
 
+loadHeaderFooter()
 // Queries I want to use for hero images
 const queries = ["travels", "beach", "mountains"];
 

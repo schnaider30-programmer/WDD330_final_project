@@ -53,6 +53,10 @@ body {
     color: var(--secondary);
 }
 
+.nav .active {
+  color: var(--secondary);
+}
+
 .btn-auth {
     color: var(--tertiary);
     border: none;
@@ -171,7 +175,10 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
 }
-
+.grid .card {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
 .features .card {
     background: var(--white);
     padding: 1.5rem;
@@ -361,12 +368,6 @@ body {
    SEARCH RESULTS
    =========================== */
 
-#attractionsGrid {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
 
 /* Info card for searched city */
 .info-card {
@@ -416,6 +417,9 @@ body {
    DASHBOARD PAGE
    =========================== */
 
+.capitalized {
+  text-transform: capitalize;
+}
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
