@@ -12,6 +12,7 @@ export async function renderWeather(city, containerId) {
     const weather = await getWeather(coords.lat, coords.lon);
     container.innerHTML = `
         <img src="${weather.imageSrc}" alt="${weather.description}">
+        <p>${weather.cityName}</p>
         <p><strong>Temperature:</strong> ${weather.temperature}°C</p>
         <p class="capitalized"><strong>Conditions:</strong> ${weather.description}</p>
         <p><strong>Humidity:</strong> ${weather.humidity}%</p>

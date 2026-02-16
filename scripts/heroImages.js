@@ -1,13 +1,12 @@
-// heroImages.js
 const accessKey = '0kpXEUreEte6d8SK_dsem-uqZDF_A3tU5_e2hYIEOCw';
 
 /**
  * Fetch and rotate hero images from Unsplash
  * @param {string[]} queries - Array of search queries (e.g. ["travels", "beach"])
- * @param {string} elementId - ID of the <img> element to display images
+ * @param {string} elementId - ID of the <picture> element to display images
  * @param {number} interval - Time in ms between image changes (default 5000)
  */
-export async function initHeroImages(queries, elementId = "hero-img", interval = 5000) {
+export async function initHeroImages(queries, elementId = "hero-picture", interval = 5000) {
   const allImages = [];
 
   for (let query of queries) {
@@ -21,17 +20,23 @@ export async function initHeroImages(queries, elementId = "hero-img", interval =
     );
     const data = await response.json();
     if (data.results.length > 0) {
-      allImages.push(data.results[0].urls.regular);
+      // store the whole urls object
+      allImages.push(data.results[0].urls);
     }
   }
 
   if (allImages.length === 0) return;
 
-  const heroImg = document.getElementById(elementId);
+  const heroImage = document.getElementById(elementId);
   let currentIndex = 0;
 
   function showImage(index) {
-    heroImg.src = allImages[index];
+    const urls = allImages[index];
+    // Build responsive sources
+    heroImage.srcset = `${urls.small} 400w, ${urls.regular} 1024w, ${urls.full} 1600w`;
+    heroImage.src = urls.full
+    heroImage.loading = "Lazy"
+    heroImage.sizes = "100vw"
   }
 
   // Show first image

@@ -9,7 +9,6 @@ const defaultCities = ["Paris", "Tokyo", "New York City", "London", "Rio de Jane
 
 async function renderSpotlight(city, containerId) {
   const container = document.getElementById(containerId);
-
   try {
     // Fetch data in parallel
     const [images, wiki] = await Promise.all([
@@ -27,15 +26,13 @@ async function renderSpotlight(city, containerId) {
         <div class="spotlight-info">
           <h3>${wiki.title}</h3>
           <p>${wiki.extract}</p>
-          ${
-            countryInfo
-              ? `<p class="capitalized"><strong>Country:</strong> ${countryInfo.name.common} | Capital: ${countryInfo.capital[0]} | Currency: ${Object.values(countryInfo.currencies)[0].name} ${Object.values(countryInfo.currencies)[0].symbol}</p>`
-              : `<p><em>Country info not available for this city.</em></p>`
-          }
+          ${countryInfo
+        ? `<p class="capitalized"><strong>Country:</strong> ${countryInfo.name.common} | <strong>Capital:</strong> ${countryInfo.capital[0]} | <strong>Currency:</strong> ${Object.values(countryInfo.currencies)[0].name} ${Object.values(countryInfo.currencies)[0].symbol}</p>`
+        : `<p><em>Country info not available for this city.</em></p>`
+      }
         </div>
       </div>
     `;
-
     container.innerHTML += cardHTML;
   } catch (err) {
     container.innerHTML += `<p>Error loading ${city}: ${err.message}</p>`;
@@ -53,10 +50,10 @@ document.getElementById("exploreForm").addEventListener("submit", async e => {
   const city = document.getElementById("city").value;
   const grid = document.getElementById("attractionsGrid");
   grid.innerHTML = "<p>Loading destination info...</p>";
-
+  document.getElementById("city").value = "";
   try {
     const [images, wiki] = await Promise.all([
-      fetchUnsplashGallery(city, 6),
+      fetchUnsplashGallery(city, 3),
       fetchWikipediaSummary(city)
     ]);
 
@@ -69,7 +66,7 @@ document.getElementById("exploreForm").addEventListener("submit", async e => {
         <p>${wiki.extract}</p>
         ${
           countryInfo
-            ? `<p><strong>Country:</strong> ${countryInfo.name.common} | Capital: ${countryInfo.capital[0]} | Currency: ${Object.values(countryInfo.currencies)[0].name}</p>`
+            ? `<p><strong>Country:</strong> ${countryInfo.name.common} | <strong>Capital:</strong> ${countryInfo.capital[0]} | <strong>Currency:</strong> ${Object.values(countryInfo.currencies)[0].name}</p>`
             : `<p><em>Country info not available for this city.</em></p>`
         }
       </div>
@@ -85,5 +82,4 @@ document.getElementById("exploreForm").addEventListener("submit", async e => {
     grid.innerHTML = `<p>Error: ${err.message}</p>`;
   }
 
-  city = ""
 });

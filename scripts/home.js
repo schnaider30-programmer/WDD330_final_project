@@ -7,7 +7,7 @@ loadHeaderFooter()
 const queries = ["travels", "beach", "mountains"];
 
 //A function to call dynamically create a hero images from Unsplash
-initHeroImages(queries)
+initHeroImages(queries, "hero-img")
 
 
 // =========================

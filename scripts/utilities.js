@@ -28,8 +28,8 @@ export async function fetchCountryInfo(countryName) {
   return data[0];
 }
 
-export async function fetchUnsplashGallery(query, count = 6) {
-  const data = await fetchJSON(`https://api.unsplash.com/search/photos?query=${query}&per_page={count}&orientation=landscape&client_id=0kpXEUreEte6d8SK_dsem-uqZDF_A3tU5_e2hYIEOCw`);
+export async function fetchUnsplashGallery(query, count = 1) {
+  const data = await fetchJSON(`https://api.unsplash.com/search/photos?query=${query}&per_page=${count}&orientation=landscape&client_id=0kpXEUreEte6d8SK_dsem-uqZDF_A3tU5_e2hYIEOCw`);
   return data.results.map(img => img.urls.regular);
 }
 
@@ -126,4 +126,14 @@ export async function loadHeaderFooter() {
   renderWithTemplate(footerTemplate, footerElement);
 
   await wayFinding()
+  showMenu()
+}
+
+function showMenu() {
+  const HamburgerBtn = document.querySelector("#hamburger-btn")
+  const navigation = document.querySelector(".nav")
+  HamburgerBtn.addEventListener("click", () => {
+    navigation.classList.toggle("active")
+    HamburgerBtn.classList.toggle("close")
+  })
 }

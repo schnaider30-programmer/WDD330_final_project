@@ -19,6 +19,7 @@ export async function getWeather(lat, lon) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=153b212f46050da1a4554b7f6497437a&units=metric`;
   const data = await fetchJSON(url);
   const imageSrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  console.log(data)
 
   return {
     temperature: data.main.temp,
@@ -27,6 +28,7 @@ export async function getWeather(lat, lon) {
     description: data.weather[0].description || "Unknown",
     imageSrc: imageSrc,
     humidity: data.main.humidity,
+    cityName: data.name,
     country: data.main
   };
 }
