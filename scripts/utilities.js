@@ -104,13 +104,22 @@ export async function loadTemplate(path) {
   return template;
 }
 
+function getBasePath() {
+  // If running on GitHub Pages
+  if (window.location.hostname.includes("github.io")) {
+    return "/WDD330_final_project/partials/";
+  }
+  // If running locally
+  return "partials/";
+}
+
 export async function loadHeaderFooter() {
   //header
-  const headerTemplate = await loadTemplate("wDD330_final_project/partials/header.html");
+  const headerTemplate = await loadTemplate(getBasePath() + "header.html");
   const headerElement = document.querySelector(".header");
 
   //footer
-  const footerTemplate = await loadTemplate("wDD330_final_project/partials/footer.html");
+  const footerTemplate = await loadTemplate(getBasePath() + "footer.html");
   const footerElement = document.querySelector(".footer");
 
   renderWithTemplate(headerTemplate, headerElement);
