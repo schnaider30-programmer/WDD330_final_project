@@ -80,6 +80,8 @@ body {
 }
 
 #hamburger-btn {
+  background: none;
+  border: none;
   background-color: var(--secondary);
   display: none;
 }
