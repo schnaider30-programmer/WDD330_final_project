@@ -37,7 +37,7 @@ body {
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
-    /*padding: var(--padding);*/
+    padding: var(--padding);
     background: var(--tertiary);
     color: var(--white);
     font-family: var(--font-heading);
