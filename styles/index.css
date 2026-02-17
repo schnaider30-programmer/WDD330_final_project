@@ -54,7 +54,7 @@ body {
   background-color: var(--white);
 }
 .nav a {
-  padding: var(--padding);
+  /*padding: var(--padding);*/
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
