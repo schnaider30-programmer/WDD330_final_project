@@ -106,7 +106,7 @@ body {
   transform: translateY(30%);
   text-shadow: 2px 2px var(--tertiary);
   color: var(--white);
-  animation: fadeIn 4s ease-in;
+  animation: fadeIn 2s ease-in 2s;
   padding-left: 20px;
 }
 
@@ -624,7 +624,7 @@ body {
 @media (max-width: 1024px) {
 
   .hero-text {
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 2s ease-in 2s;
     transform: translateY(20%);
   }
   @keyframes fadeIn {
@@ -643,8 +643,8 @@ body {
 
   .hero-text {
     text-align: center;
-    font-size: 0.9rem;
-    animation: fadeIn 4s ease-in;
+    font-size: 0.5rem;
+    animation: fadeIn 2s ease-in 2s;
     transform: translateY(10%);
   }
 
