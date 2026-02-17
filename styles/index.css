@@ -643,9 +643,12 @@ body {
 
   .hero-text {
     text-align: center;
-    font-size: 0.5rem;
     animation: fadeIn 2s ease-in 2s;
     transform: translateY(10%);
+  }
+  
+  .hero-text h1, .hero-text h2 { 
+     font-size: 0.9rem;
   }
 
   @keyframes fadeIn {
