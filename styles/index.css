@@ -37,7 +37,7 @@ body {
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding);
+    /*padding: var(--padding);*/
     background: var(--tertiary);
     color: var(--white);
     font-family: var(--font-heading);
@@ -54,7 +54,7 @@ body {
   background-color: var(--white);
 }
 .nav a {
-  /*padding: var(--padding);*/
+    padding: var(--padding);
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
@@ -693,7 +693,7 @@ body {
     display: none;
     grid-row: 2/3;
     grid-column: 1/3;
-    /*width: 100%;*/
+    width: 100%;
     text-align: center;
   }
 
