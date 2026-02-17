@@ -650,11 +650,11 @@ body {
   }
   
   .hero-text h1 { 
-     font-size: 0.9rem;
+     font-size: 1.2rem;
   }
   
   .hero-text p { 
-     font-size: 0.5rem;
+     font-size: 0.9rem;
   }
 
   @keyframes fadeIn {
