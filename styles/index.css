@@ -689,6 +689,7 @@ body {
 
   .nav {
     margin-top: 1.5rem;
+    margin-left: 0;
     display: none;
     grid-row: 2/3;
     grid-column: 1/3;
