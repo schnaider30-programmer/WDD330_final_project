@@ -6,7 +6,7 @@ import { initItinerary } from "./itinerary.js";
 import { renderNotifications } from "./notifications.js";
 import { loadHeaderFooter } from "./utilities.js";
 
-loadHeaderFooter()
+loadHeaderFooter();
 
 // Load trip from localStorage
 const tripData = Trip.load();
@@ -22,5 +22,6 @@ if (trip) {
   initItinerary("itineraryForm", "itineraryInfo");
   renderNotifications(trip, "notificationsContent");
 } else {
-  document.getElementById("tripSummaryContent").innerText = "No trip created yet.";
+  document.getElementById("tripSummaryContent").innerText =
+    "No trip created yet.";
 }

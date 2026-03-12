@@ -6,9 +6,10 @@ export function renderNotifications(trip, containerId) {
 
   if (!trip) notes.push("No trip created yet.");
   if (expenses.length === 0) notes.push("Don't forget to add your budget.");
-  if (itinerary.length === 0) notes.push("Plan some activities in your itinerary.");
+  if (itinerary.length === 0)
+    notes.push("Plan some activities in your itinerary.");
 
   container.innerHTML = notes.length
-    ? `<ul>${notes.map(n => `<li>${n}</li>`).join("")}</ul>`
+    ? `<ul>${notes.map((n) => `<li>${n}</li>`).join("")}</ul>`
     : "All set!";
 }

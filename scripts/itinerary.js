@@ -9,11 +9,11 @@ export function initItinerary(formId, containerId) {
       return;
     }
     container.innerHTML = `
-      <ul>${itinerary.map(a => `<li>${a.date}: ${a.name}</li>`).join("")}</ul>
+      <ul>${itinerary.map((a) => `<li>${a.date}: ${a.name}</li>`).join("")}</ul>
     `;
   }
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = form.querySelector("#activityName").value;
     const date = form.querySelector("#activityDate").value;

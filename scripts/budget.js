@@ -11,13 +11,13 @@ export function initBudget(travelers, formId, containerId) {
     const total = expenses.reduce((sum, e) => sum + e.amount, 0);
     const perPerson = (total / travelers).toFixed(2);
     container.innerHTML = `
-      <ul>${expenses.map(e => `<li>${e.name}: $${e.amount}</li>`).join("")}</ul>
+      <ul>${expenses.map((e) => `<li>${e.name}: $${e.amount}</li>`).join("")}</ul>
       <p><strong>Total:</strong> $${total}</p>
       <p><strong>Per Person:</strong> $${perPerson}</p>
     `;
   }
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const nameInput = form.querySelector("#expenseName");
     const amountInput = form.querySelector("#expenseAmount");
@@ -30,7 +30,7 @@ export function initBudget(travelers, formId, containerId) {
     renderBudget();
 
     nameInput.value = "";
-     amountInput.value = "";
+    amountInput.value = "";
   });
 
   renderBudget();

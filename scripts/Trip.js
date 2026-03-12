@@ -1,5 +1,5 @@
-import { formatDateRange } from './utilities.js';
-import { getCountryInfo, getWeather, getPhotos } from './api.js';
+import { formatDateRange } from "./utilities.js";
+import { getCountryInfo, getWeather, getPhotos } from "./api.js";
 
 export class Trip {
   constructor(destination, startDate, endDate, travelers) {
@@ -14,21 +14,21 @@ export class Trip {
   }
 
   async enrichData(apiKeys) {
-  // Photos
-  const photos = await getPhotos(this.destination, apiKeys.unsplash);
-  this.photos = photos.results.map(p => p.urls.small);
+    // Photos
+    const photos = await getPhotos(this.destination, apiKeys.unsplash);
+    this.photos = photos.results.map((p) => p.urls.small);
 
-  // Coordinates from Wikipedia
-  const coords = await getCoordinates(this.destination);
-  if (coords) {
-    this.weather = await getWeather(coords.lat, coords.lon);
+    // Coordinates from Wikipedia
+    const coords = await getCoordinates(this.destination);
+    if (coords) {
+      this.weather = await getWeather(coords.lat, coords.lon);
+    }
+
+    // Summary from Wikipedia
+    const wiki = await fetchWikipediaSummary(this.destination);
+    this.summaryInfo = wiki.extract;
   }
 
-  // Summary from Wikipedia
-  const wiki = await fetchWikipediaSummary(this.destination);
-  this.summaryInfo = wiki.extract;
-}
-  
   save() {
     localStorage.setItem("trip", JSON.stringify(this));
   }

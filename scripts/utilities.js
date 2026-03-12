@@ -5,7 +5,9 @@ export function formatDateRange(start, end) {
 }
 
 export function formatCurrency(amount, currency = "USD") {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
+  return new Intl.NumberFormat("en-US", { style: "currency", currency }).format(
+    amount,
+  );
 }
 
 export async function fetchJSON(url) {
@@ -14,39 +16,40 @@ export async function fetchJSON(url) {
   return res.json();
 }
 
-
 export async function fetchWikipediaSummary(query) {
   return fetchJSON(
-    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`
+    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`,
   );
 }
 
 export async function fetchCountryInfo(countryName) {
   const data = await fetchJSON(
-    `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`
+    `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`,
   );
   return data[0];
 }
 
 export async function fetchUnsplashGallery(query, count = 1) {
-  const data = await fetchJSON(`https://api.unsplash.com/search/photos?query=${query}&per_page=${count}&orientation=landscape&client_id=0kpXEUreEte6d8SK_dsem-uqZDF_A3tU5_e2hYIEOCw`);
-  return data.results.map(img => img.urls.regular);
+  const data = await fetchJSON(
+    `https://api.unsplash.com/search/photos?query=${query}&per_page=${count}&orientation=landscape&client_id=0kpXEUreEte6d8SK_dsem-uqZDF_A3tU5_e2hYIEOCw`,
+  );
+  return data.results.map((img) => img.urls.regular);
 }
 
 export async function getCountryFromCity(destination) {
-  const coord = await getCoordinates(destination)
+  const coord = await getCoordinates(destination);
   const weather = await getWeather(coord.lat, coord.lon);
-  console.log(weather.ISOCountry)
+  console.log(weather.ISOCountry);
   const countryInfo = await getCountryInfo(weather.ISOCountry);
   return countryInfo;
 }
 
 export async function getCoordinates(city) {
   const data = await fetchJSON(
-    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(city)}`
+    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(city)}`,
   );
-  console.log(data)
-  console.log(data.coordinates)
+  console.log(data);
+  console.log(data.coordinates);
   if (data.coordinates) {
     return { lat: data.coordinates.lat, lon: data.coordinates.lon };
   }
@@ -63,9 +66,11 @@ export async function resolveCountry(destination) {
 
   // console.table(country)
 
-  const independentCountry = country.find(country => country.independent && country.unMember)
+  const independentCountry = country.find(
+    (country) => country.independent && country.unMember,
+  );
 
-  console.log(independentCountry)
+  console.log(independentCountry);
   return independentCountry;
 }
 
@@ -75,23 +80,19 @@ function wayFinding() {
 
   // Restore active state on load
   if (activeHref) {
-    const activeLink = [...navList].find(l => l.getAttribute("href") === activeHref);
+    const activeLink = [...navList].find(
+      (l) => l.getAttribute("href") === activeHref,
+    );
     if (activeLink) activeLink.classList.add("active");
   }
 
-  navList.forEach(link => {
+  navList.forEach((link) => {
     link.addEventListener("click", () => {
       localStorage.setItem("activeLink", link.getAttribute("href"));
     });
   });
 }
-export function renderWithTemplate(
-  template,
-  parentElement,
-  data,
-  callback
-) {
-
+export function renderWithTemplate(template, parentElement, data, callback) {
   parentElement.innerHTML = template;
   if (callback) {
     callback(data);
@@ -125,15 +126,15 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 
-  await wayFinding()
-  showMenu()
+  await wayFinding();
+  showMenu();
 }
 
 function showMenu() {
-  const HamburgerBtn = document.querySelector("#hamburger-btn")
-  const navigation = document.querySelector(".nav")
+  const HamburgerBtn = document.querySelector("#hamburger-btn");
+  const navigation = document.querySelector(".nav");
   HamburgerBtn.addEventListener("click", () => {
-    navigation.classList.toggle("active")
-    HamburgerBtn.classList.toggle("close")
-  })
+    navigation.classList.toggle("active");
+    HamburgerBtn.classList.toggle("close");
+  });
 }

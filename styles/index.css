@@ -1,46 +1,46 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
 
 :root {
-    /* Colors */
-    --primary: #4A90E2;
-    /* sky blue */
-    --secondary: #f0a868;
-    /* sandy beige */
-    --tertiary: #0d1b2a;
-    /* deep navy */
-    --white: #f6f8fa; 
-    --text: #333;
+  /* Colors */
+  --primary: #4a90e2;
+  /* sky blue */
+  --secondary: #f0a868;
+  /* sandy beige */
+  --tertiary: #0d1b2a;
+  /* deep navy */
+  --white: #f6f8fa;
+  --text: #333;
 
-    /* Typography */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Merriweather', serif;
-    --font-numbers: 'Roboto Mono', monospace;
+  /* Typography */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Merriweather", serif;
+  --font-numbers: "Roboto Mono", monospace;
 
-    /* Spacing & Effects */
-    --padding: 1rem;
-    --radius: 8px;
-    --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Spacing & Effects */
+  --padding: 1rem;
+  --radius: 8px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* General reset */
 body {
-    margin: 0;
-    font-family: var(--font-body);
-    color: var(--text);
-    background: var(--white);
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
 }
 
 /* Header */
 .header {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--padding);
-    background: var(--tertiary);
-    color: var(--white);
-    font-family: var(--font-heading);
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  background: var(--tertiary);
+  color: var(--white);
+  font-family: var(--font-heading);
 }
 .logo {
   display: flex;
@@ -55,13 +55,13 @@ body {
 }
 .nav a {
   padding: var(--padding);
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .nav a:hover {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 
 .nav .active {
@@ -111,27 +111,27 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
 }
 
 .hero-text p {
-    font-family: var(--font-body);
-    font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
 }
 
 /* Hero animation */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(30%);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(30%);
+  }
 }
 
 /* Trip form */
@@ -151,42 +151,44 @@ body {
 
 .trip-form input,
 .trip-form button {
-    padding: 0.7rem;
-    border-radius: var(--radius);
-    min-width: 180px;
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  min-width: 180px;
 }
 
 .trip-form button {
-    background: var(--secondary);
-    color: var(--tertiary);
-    font-weight: bold;
-    cursor: pointer;
-    font-family: var(--font-heading);
-    transition: transform 0.2s ease, background 0.3s ease;
-    border: none;
+  background: var(--secondary);
+  color: var(--tertiary);
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+  border: none;
 }
 
 .trip-form button:hover {
-    transform: scale(1.05);
-    background: var(--primary);
-    color: var(--white);
+  transform: scale(1.05);
+  background: var(--primary);
+  color: var(--white);
 }
 
 /* Features grid */
 .features {
-    padding: 2rem;
-    text-align: center;
+  padding: 2rem;
+  text-align: center;
 }
 
 .features h2 {
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
 }
 
 .features .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 .grid .card {
   text-decoration: none;
@@ -194,42 +196,44 @@ body {
   color: var(--tertiary);
 }
 .features .card {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-family: var(--font-body);
-    cursor: pointer;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  font-family: var(--font-body);
+  cursor: pointer;
 }
 
 .features .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Dashboard preview */
 
 #dashboard {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .dashboard-preview {
-    background: var(--secondary);
-    color: var(--tertiary);
-    padding: 2rem;
-    text-align: center;
-    margin: 2rem auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    font-family: var(--font-numbers);
-    max-width: 800px;
-    /* keeps it centered and not too wide */
+  background: var(--secondary);
+  color: var(--tertiary);
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-family: var(--font-numbers);
+  max-width: 800px;
+  /* keeps it centered and not too wide */
 }
 
 .dashboard-preview h2 {
-    font-family: var(--font-heading);
-    margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
 }
 .dashboard-card h3 {
   font-family: var(--font-heading);
@@ -248,27 +252,29 @@ body {
 }
 
 .dashboard-preview #tripSummary {
-    margin: 1rem 0;
-    font-size: 1.1rem;
+  margin: 1rem 0;
+  font-size: 1.1rem;
 }
 
 .dashboard-preview .btn-auth {
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: var(--radius);
-    font-family: var(--font-heading);
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s ease;
-    background: var(--white);
-    color: var(--tertiary);
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+  background: var(--white);
+  color: var(--tertiary);
 }
 
 .dashboard-preview .btn-auth:hover {
-    background: var(--tertiary);
-    transform: scale(1.05);
-    color: var(--white)
+  background: var(--tertiary);
+  transform: scale(1.05);
+  color: var(--white);
 }
 
 /* ===========================
@@ -322,7 +328,9 @@ body {
   font-weight: bold;
   cursor: pointer;
   font-family: var(--font-heading);
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
 }
 
 .explore-form button:hover {
@@ -355,13 +363,13 @@ body {
 }
 
 .spotlight-img {
-  width: 40%;          /* image takes 40% of card width */
+  width: 40%; /* image takes 40% of card width */
   height: auto;
   object-fit: cover;
 }
 
 .spotlight-info {
-  flex: 1;             /* text takes remaining space */
+  flex: 1; /* text takes remaining space */
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -381,7 +389,6 @@ body {
 /* ===========================
    SEARCH RESULTS
    =========================== */
-
 
 /* Info card for searched city */
 .info-card {
@@ -446,12 +453,14 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .dashboard-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-card h3 {
@@ -492,7 +501,7 @@ body {
 
 .dashboard-card button:hover {
   background: var(--primary);
-  color: var(--tertiary)
+  color: var(--tertiary);
 }
 
 /* Lists inside cards */
@@ -508,7 +517,7 @@ body {
 }
 
 /*Weather Info*/
-#weatherInfo p:first-of-type{
+#weatherInfo p:first-of-type {
   font-size: 1.5rem;
   color: var(--tertiary);
   font-family: var(--font-numbers);
@@ -592,37 +601,36 @@ body {
   color: var(--primary);
 }
 
-.map iframe{
+.map iframe {
   width: 100%;
   height: 300px;
 }
 
 /* Footer */
 .footer {
-    background: var(--tertiary);
-    color: var(--white);
-    text-align: center;
-    padding: var(--padding);
-    font-family: var(--font-body);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  background: var(--tertiary);
+  color: var(--white);
+  text-align: center;
+  padding: var(--padding);
+  font-family: var(--font-body);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .social img {
-    background-color: var(--white);
-    padding: 10px;
-    border-radius: 20px;
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .social img:hover {
-    background-color: var(--secondary);
-    text-decoration: none;
+  background-color: var(--secondary);
+  text-decoration: none;
 }
 
 /* Responsive tweaks */
 
 @media (max-width: 1024px) {
-
   .hero-text {
     animation: fadeIn 2s ease-in;
     transform: translateY(20%);
@@ -631,7 +639,7 @@ body {
     from {
       opacity: 0;
       transform: translateY(20px);
-    } 
+    }
     to {
       opacity: 1;
       transform: translateY(20%);
@@ -640,7 +648,6 @@ body {
 }
 
 @media (max-width: 750px) {
-
   .hero-text {
     text-align: center;
     font-size: 0.9rem;
@@ -714,12 +721,10 @@ body {
     justify-content: space-around;
     align-items: center;
   }
-  
+
   .social {
     display: flex;
     gap: 15px;
     cursor: pointer;
   }
 }
-
-  

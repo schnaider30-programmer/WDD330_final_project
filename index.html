@@ -1,61 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jean Louis Schnaider">
-    <meta name="description" content="Welcome to travel Easy. You can contact Travel Easy staff here or find our location.">
-    <link rel="icon" href="images/travel-easy.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jean Louis Schnaider" />
+    <meta
+      name="description"
+      content="Welcome to travel Easy. You can contact Travel Easy staff here or find our location."
+    />
+    <link rel="icon" href="images/travel-easy.ico" />
     <title>Travel Easy - Home</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/index.css" />
     <script type="module" src="scripts/home.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- HEADER -->
-    <header class="header">
-    </header>
+    <header class="header"></header>
 
     <!-- HERO -->
     <section class="hero">
-        <img src="" alt="Travel Photography" id="hero-img">
-        <div class="hero-text">
-            <h1>Plan your trip with Travel Easy</h1>
-            <p>Create your trip and explore destinations, weather, and budgets.</p>
-        </div>
-        <form id="tripForm" class="trip-form">
-            <input type="text" id="dest" placeholder="Destination" required>
-            <input type="date" id="startDate" required>
-            <input type="date" id="endDate" required>
-            <input type="number" id="travelers" placeholder="Travelers" min="1" required>
-            <button type="submit">Create Trip</button>
-        </form>
+      <img src="" alt="Travel Photography" id="hero-img" />
+      <div class="hero-text">
+        <h1>Plan your trip with Travel Easy</h1>
+        <p>Create your trip and explore destinations, weather, and budgets.</p>
+      </div>
+      <form id="tripForm" class="trip-form">
+        <input type="text" id="dest" placeholder="Destination" required />
+        <input type="date" id="startDate" required />
+        <input type="date" id="endDate" required />
+        <input
+          type="number"
+          id="travelers"
+          placeholder="Travelers"
+          min="1"
+          required
+        />
+        <button type="submit">Create Trip</button>
+      </form>
     </section>
 
     <!-- FEATURES -->
     <section class="features">
-        <h2>Explore Travel Tools</h2>
-        <div class="grid">
-            <a href="destinations.html" class="card">Destination Explorer</a>
-            <a href="dashboard.html#country" class="card">Country Information</a>
-            <a href="dashboard.html#weather" class="card">Weather Forecast</a>
-            <a href="dashboard.html#budget" class="card">Budget Calculator</a>
-            <a href="dashboard.html#itinerary" class="card">Itinerary Builder</a>
-        </div>
+      <h2>Explore Travel Tools</h2>
+      <div class="grid">
+        <a href="destinations.html" class="card">Destination Explorer</a>
+        <a href="dashboard.html#country" class="card">Country Information</a>
+        <a href="dashboard.html#weather" class="card">Weather Forecast</a>
+        <a href="dashboard.html#budget" class="card">Budget Calculator</a>
+        <a href="dashboard.html#itinerary" class="card">Itinerary Builder</a>
+      </div>
     </section>
 
     <!-- DASHBOARD PREVIEW -->
     <section class="dashboard-preview">
-        <h2>Your Current Trip</h2>
-        <div id="tripSummary">No trip created yet.</div>
-        <a href="dashboard.html" class="btn-auth">View Dashboard</a>
+      <h2>Your Current Trip</h2>
+      <div id="tripSummary">No trip created yet.</div>
+      <a href="dashboard.html" class="btn-auth">View Dashboard</a>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-
-    </footer>
-</body>
-
+    <footer class="footer"></footer>
+  </body>
 </html>

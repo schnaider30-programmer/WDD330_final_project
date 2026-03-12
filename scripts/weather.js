@@ -1,5 +1,5 @@
-import { getCoordinates } from './utilities.js';
-import { getWeather } from './api.js';
+import { getCoordinates } from "./utilities.js";
+import { getWeather } from "./api.js";
 
 export async function renderWeather(city, containerId) {
   const container = document.getElementById(containerId);
@@ -22,4 +22,3 @@ export async function renderWeather(city, containerId) {
     container.innerHTML = `<p><em>Weather data not available.</em></p>`;
   }
 }
-
