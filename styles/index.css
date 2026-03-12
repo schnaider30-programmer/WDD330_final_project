@@ -80,6 +80,8 @@ body {
 }
 
 #hamburger-btn {
+  background: none;
+  border: none;
   background-color: var(--secondary);
   display: none;
 }
@@ -106,7 +108,7 @@ body {
   transform: translateY(30%);
   text-shadow: 2px 2px var(--tertiary);
   color: var(--white);
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in 2s;
   padding-left: 20px;
 }
 
@@ -632,7 +634,7 @@ body {
 
 @media (max-width: 1024px) {
   .hero-text {
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 2s ease-in 2s;
     transform: translateY(20%);
   }
   @keyframes fadeIn {
@@ -650,9 +652,16 @@ body {
 @media (max-width: 750px) {
   .hero-text {
     text-align: center;
-    font-size: 0.9rem;
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 2s ease-in 2s;
     transform: translateY(10%);
+  }
+
+  .hero-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
   }
 
   @keyframes fadeIn {
@@ -687,6 +696,7 @@ body {
 
   .nav {
     margin-top: 1.5rem;
+    margin-left: 0;
     display: none;
     grid-row: 2/3;
     grid-column: 1/3;
